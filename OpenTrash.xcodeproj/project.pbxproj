@@ -7,28 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18E4A4CE1AFD3B6E00A806A9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4A4CD1AFD3B6E00A806A9 /* main.swift */; };
+		18535F751AFEA51D009EC7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18535F741AFEA51D009EC7B9 /* AppDelegate.swift */; };
+		18535F771AFEA51D009EC7B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18535F761AFEA51D009EC7B9 /* ViewController.swift */; };
+		18535F791AFEA51D009EC7B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18535F781AFEA51D009EC7B9 /* Images.xcassets */; };
+		18535F7C1AFEA51D009EC7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18535F7A1AFEA51D009EC7B9 /* Main.storyboard */; };
+		18535F881AFEA51D009EC7B9 /* OpenTrashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18535F871AFEA51D009EC7B9 /* OpenTrashTests.swift */; };
+		18535F951AFEA766009EC7B9 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18535F931AFEA766009EC7B9 /* Trash.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		18E4A4C81AFD3B6E00A806A9 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
+/* Begin PBXContainerItemProxy section */
+		18535F821AFEA51D009EC7B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18535F671AFEA51D009EC7B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18535F6E1AFEA51D009EC7B9;
+			remoteInfo = OpenTrash;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18E4A4CA1AFD3B6E00A806A9 /* OpenTrash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenTrash; sourceTree = BUILT_PRODUCTS_DIR; };
-		18E4A4CD1AFD3B6E00A806A9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		18535F6F1AFEA51D009EC7B9 /* OpenTrash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenTrash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18535F731AFEA51D009EC7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18535F741AFEA51D009EC7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18535F761AFEA51D009EC7B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18535F781AFEA51D009EC7B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		18535F7B1AFEA51D009EC7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18535F811AFEA51D009EC7B9 /* OpenTrashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTrashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18535F861AFEA51D009EC7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18535F871AFEA51D009EC7B9 /* OpenTrashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTrashTests.swift; sourceTree = "<group>"; };
+		18535F931AFEA766009EC7B9 /* Trash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		18E4A4C71AFD3B6E00A806A9 /* Frameworks */ = {
+		18535F6C1AFEA51D009EC7B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18535F7E1AFEA51D009EC7B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,40 +56,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18E4A4C11AFD3B6E00A806A9 = {
+		18535F661AFEA51D009EC7B9 = {
 			isa = PBXGroup;
 			children = (
-				18E4A4CC1AFD3B6E00A806A9 /* OpenTrash */,
-				18E4A4CB1AFD3B6E00A806A9 /* Products */,
+				18535F711AFEA51D009EC7B9 /* OpenTrash */,
+				18535F841AFEA51D009EC7B9 /* OpenTrashTests */,
+				18535F701AFEA51D009EC7B9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		18E4A4CB1AFD3B6E00A806A9 /* Products */ = {
+		18535F701AFEA51D009EC7B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18E4A4CA1AFD3B6E00A806A9 /* OpenTrash */,
+				18535F6F1AFEA51D009EC7B9 /* OpenTrash.app */,
+				18535F811AFEA51D009EC7B9 /* OpenTrashTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18E4A4CC1AFD3B6E00A806A9 /* OpenTrash */ = {
+		18535F711AFEA51D009EC7B9 /* OpenTrash */ = {
 			isa = PBXGroup;
 			children = (
-				18E4A4CD1AFD3B6E00A806A9 /* main.swift */,
+				18535F911AFEA670009EC7B9 /* Model */,
+				18535F741AFEA51D009EC7B9 /* AppDelegate.swift */,
+				18535F761AFEA51D009EC7B9 /* ViewController.swift */,
+				18535F781AFEA51D009EC7B9 /* Images.xcassets */,
+				18535F7A1AFEA51D009EC7B9 /* Main.storyboard */,
+				18535F721AFEA51D009EC7B9 /* Supporting Files */,
 			);
 			path = OpenTrash;
+			sourceTree = "<group>";
+		};
+		18535F721AFEA51D009EC7B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18535F731AFEA51D009EC7B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18535F841AFEA51D009EC7B9 /* OpenTrashTests */ = {
+			isa = PBXGroup;
+			children = (
+				18535F871AFEA51D009EC7B9 /* OpenTrashTests.swift */,
+				18535F851AFEA51D009EC7B9 /* Supporting Files */,
+			);
+			path = OpenTrashTests;
+			sourceTree = "<group>";
+		};
+		18535F851AFEA51D009EC7B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18535F861AFEA51D009EC7B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18535F911AFEA670009EC7B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18535F931AFEA766009EC7B9 /* Trash.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18E4A4C91AFD3B6E00A806A9 /* OpenTrash */ = {
+		18535F6E1AFEA51D009EC7B9 /* OpenTrash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18E4A4D11AFD3B6E00A806A9 /* Build configuration list for PBXNativeTarget "OpenTrash" */;
+			buildConfigurationList = 18535F8B1AFEA51D009EC7B9 /* Build configuration list for PBXNativeTarget "OpenTrash" */;
 			buildPhases = (
-				18E4A4C61AFD3B6E00A806A9 /* Sources */,
-				18E4A4C71AFD3B6E00A806A9 /* Frameworks */,
-				18E4A4C81AFD3B6E00A806A9 /* CopyFiles */,
+				18535F6B1AFEA51D009EC7B9 /* Sources */,
+				18535F6C1AFEA51D009EC7B9 /* Frameworks */,
+				18535F6D1AFEA51D009EC7B9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -79,53 +137,125 @@
 			);
 			name = OpenTrash;
 			productName = OpenTrash;
-			productReference = 18E4A4CA1AFD3B6E00A806A9 /* OpenTrash */;
-			productType = "com.apple.product-type.tool";
+			productReference = 18535F6F1AFEA51D009EC7B9 /* OpenTrash.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18535F801AFEA51D009EC7B9 /* OpenTrashTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18535F8E1AFEA51D009EC7B9 /* Build configuration list for PBXNativeTarget "OpenTrashTests" */;
+			buildPhases = (
+				18535F7D1AFEA51D009EC7B9 /* Sources */,
+				18535F7E1AFEA51D009EC7B9 /* Frameworks */,
+				18535F7F1AFEA51D009EC7B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18535F831AFEA51D009EC7B9 /* PBXTargetDependency */,
+			);
+			name = OpenTrashTests;
+			productName = OpenTrashTests;
+			productReference = 18535F811AFEA51D009EC7B9 /* OpenTrashTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		18E4A4C21AFD3B6E00A806A9 /* Project object */ = {
+		18535F671AFEA51D009EC7B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Rondinelli Morais";
 				TargetAttributes = {
-					18E4A4C91AFD3B6E00A806A9 = {
+					18535F6E1AFEA51D009EC7B9 = {
 						CreatedOnToolsVersion = 6.2;
+					};
+					18535F801AFEA51D009EC7B9 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 18535F6E1AFEA51D009EC7B9;
 					};
 				};
 			};
-			buildConfigurationList = 18E4A4C51AFD3B6E00A806A9 /* Build configuration list for PBXProject "OpenTrash" */;
+			buildConfigurationList = 18535F6A1AFEA51D009EC7B9 /* Build configuration list for PBXProject "OpenTrash" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 18E4A4C11AFD3B6E00A806A9;
-			productRefGroup = 18E4A4CB1AFD3B6E00A806A9 /* Products */;
+			mainGroup = 18535F661AFEA51D009EC7B9;
+			productRefGroup = 18535F701AFEA51D009EC7B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18E4A4C91AFD3B6E00A806A9 /* OpenTrash */,
+				18535F6E1AFEA51D009EC7B9 /* OpenTrash */,
+				18535F801AFEA51D009EC7B9 /* OpenTrashTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		18535F6D1AFEA51D009EC7B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18535F791AFEA51D009EC7B9 /* Images.xcassets in Resources */,
+				18535F7C1AFEA51D009EC7B9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18535F7F1AFEA51D009EC7B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		18E4A4C61AFD3B6E00A806A9 /* Sources */ = {
+		18535F6B1AFEA51D009EC7B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18E4A4CE1AFD3B6E00A806A9 /* main.swift in Sources */,
+				18535F951AFEA766009EC7B9 /* Trash.swift in Sources */,
+				18535F771AFEA51D009EC7B9 /* ViewController.swift in Sources */,
+				18535F751AFEA51D009EC7B9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18535F7D1AFEA51D009EC7B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18535F881AFEA51D009EC7B9 /* OpenTrashTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		18535F831AFEA51D009EC7B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18535F6E1AFEA51D009EC7B9 /* OpenTrash */;
+			targetProxy = 18535F821AFEA51D009EC7B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18535F7A1AFEA51D009EC7B9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18535F7B1AFEA51D009EC7B9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		18E4A4CF1AFD3B6E00A806A9 /* Debug */ = {
+		18535F891AFEA51D009EC7B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -142,6 +272,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -166,7 +297,7 @@
 			};
 			name = Debug;
 		};
-		18E4A4D01AFD3B6E00A806A9 /* Release */ = {
+		18535F8A1AFEA51D009EC7B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -183,6 +314,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -200,41 +332,93 @@
 			};
 			name = Release;
 		};
-		18E4A4D21AFD3B6E00A806A9 /* Debug */ = {
+		18535F8C1AFEA51D009EC7B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OpenTrash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		18E4A4D31AFD3B6E00A806A9 /* Release */ = {
+		18535F8D1AFEA51D009EC7B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OpenTrash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		18535F8F1AFEA51D009EC7B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenTrashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenTrash.app/Contents/MacOS/OpenTrash";
+			};
+			name = Debug;
+		};
+		18535F901AFEA51D009EC7B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenTrashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenTrash.app/Contents/MacOS/OpenTrash";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18E4A4C51AFD3B6E00A806A9 /* Build configuration list for PBXProject "OpenTrash" */ = {
+		18535F6A1AFEA51D009EC7B9 /* Build configuration list for PBXProject "OpenTrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18E4A4CF1AFD3B6E00A806A9 /* Debug */,
-				18E4A4D01AFD3B6E00A806A9 /* Release */,
+				18535F891AFEA51D009EC7B9 /* Debug */,
+				18535F8A1AFEA51D009EC7B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18E4A4D11AFD3B6E00A806A9 /* Build configuration list for PBXNativeTarget "OpenTrash" */ = {
+		18535F8B1AFEA51D009EC7B9 /* Build configuration list for PBXNativeTarget "OpenTrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18E4A4D21AFD3B6E00A806A9 /* Debug */,
-				18E4A4D31AFD3B6E00A806A9 /* Release */,
+				18535F8C1AFEA51D009EC7B9 /* Debug */,
+				18535F8D1AFEA51D009EC7B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18535F8E1AFEA51D009EC7B9 /* Build configuration list for PBXNativeTarget "OpenTrashTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18535F8F1AFEA51D009EC7B9 /* Debug */,
+				18535F901AFEA51D009EC7B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 18E4A4C21AFD3B6E00A806A9 /* Project object */;
+	rootObject = 18535F671AFEA51D009EC7B9 /* Project object */;
 }
