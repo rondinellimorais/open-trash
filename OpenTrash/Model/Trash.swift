@@ -24,25 +24,23 @@ class Trash : NSObject {
     // Methods
     //------------------------------------------------------------
     func status() -> StatusTrash {
-        var command = NSMutableString()
-        command.appendString(" tell application \"Finder\" \n")
-        command.appendString("      return POSIX path of (target of window 1 as alias) \n")
-        command.appendString(" end tell ")
+        let command = NSMutableString()
+        command.append(" tell application \"Finder\" \n")
+        command.append("      return POSIX path of (target of window 1 as alias) \n")
+        command.append(" end tell ")
         
-        var script = NSAppleScript(source: command)
+        let script = NSAppleScript(source: command as String)
         var errors:NSDictionary?
-        var descriptor = script?.executeAndReturnError(&errors) as NSAppleEventDescriptor?
+        let descriptor = script?.executeAndReturnError(&errors) as NSAppleEventDescriptor?
         
         if ((errors == nil) || (descriptor != nil)) {
-            var path = descriptor?.stringValue
+            let path = descriptor?.stringValue
             
             if path != nil {
                 
-                var range = path?.rangeOfString(Directory().Trash,
-                    options: NSStringCompareOptions.CaseInsensitiveSearch,
-                    range: nil, locale: nil)
                 
-                if range != nil {
+                
+                if let _ = path?.range(of: Directory().Trash) {
                     return StatusTrash.Open
                 }
             }
