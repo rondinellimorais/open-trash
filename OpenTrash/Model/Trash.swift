@@ -18,12 +18,25 @@ struct Directory {
     var Trash = "\(NSHomeDirectory())/.Trash"
 }
 
+protocol TrashDelegate : NSObjectProtocol {
+    func statusTrashDidChanged(_ status:StatusTrash)
+}
+
 class Trash : NSObject {
     
-    //------------------------------------------------------------
-    // Methods
-    //------------------------------------------------------------
-    func status() -> StatusTrash {
+    static let shared = Trash()
+    public var delegate:TrashDelegate?
+    var status:StatusTrash = StatusTrash.None
+    
+    override init() {
+        super.init()
+        
+        self.checkStatus(nil)
+        
+        Timer.scheduledTimer(timeInterval: 0.5, target:self, selector: #selector(checkStatus(_:)), userInfo: nil, repeats: true)
+    }
+    
+    func statusBaseDirectory() -> StatusTrash {
         let command = NSMutableString()
         command.append(" tell application \"Finder\" \n")
         command.append("      return POSIX path of (target of window 1 as alias) \n")
@@ -38,13 +51,22 @@ class Trash : NSObject {
             
             if path != nil {
                 
-                
-                
                 if let _ = path?.range(of: Directory().Trash) {
                     return StatusTrash.Open
                 }
             }
         }
         return StatusTrash.Close
+    }
+    
+    @objc private func checkStatus(_ timer:Timer!) {
+        
+        let statusTrash = self.statusBaseDirectory()
+        
+        if statusTrash != self.status {
+            self.status = statusTrash
+            
+            self.delegate?.statusTrashDidChanged(statusTrash)
+        }
     }
 }

@@ -1,9 +1,45 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Window Controller-->
+        <scene sceneID="nls-8S-uiq">
+            <objects>
+                <windowController storyboardIdentifier="MainWindow" id="qDc-qA-0ll" sceneMemberID="viewController">
+                    <window key="window" title="Main" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="7Rg-i8-38a">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="qDc-qA-0ll" id="Sk6-8i-2Gi"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="hyE-Bq-YJN"/>
+                    </connections>
+                </windowController>
+                <customObject id="evm-oc-Yxf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="226" y="-251"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vxh-Il-hfM">
+            <objects>
+                <customObject id="BYz-Tg-GwD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="6XZ-q5-6fp" sceneMemberID="viewController">
+                    <view key="view" id="4Vv-p6-9iJ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="933" y="-276"/>
+        </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
@@ -63,72 +99,60 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="OpenTrash" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="50" y="-497"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="R2V-B0-nI4">
-            <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Tash Monitor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="656" y="354" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                    </window>
-                    <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
-                    </connections>
-                </windowController>
-                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="240"/>
-        </scene>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="OpenTrash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" storyboardIdentifier="MainVC" id="XfG-lQ-9wD" customClass="ViewController" customModule="OpenTrash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="207" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="239" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09i-0W-bZO">
+                                <rect key="frame" x="8" y="20" width="223" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright (c) 2018 - Rondinelli Morais" id="Q1h-Ki-njY">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2It-as-pdx">
-                                <rect key="frame" x="18" y="225" width="171" height="25"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Tash Monitor" id="q3u-JH-NLn">
+                                <rect key="frame" x="18" y="165" width="203" height="25"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Mecha Tash Monitor" id="q3u-JH-NLn">
                                     <font key="font" size="20" name="HelveticaNeue-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="DVu-0q-f4R">
+                                <rect key="frame" x="94" y="198" width="52" height="52"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="high_trash_icon" id="krr-9k-Mv9"/>
+                            </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="stl-i7-kuY">
-                                <rect key="frame" x="20" y="198" width="169" height="19"/>
+                                <rect key="frame" x="18" y="138" width="203" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Status trash" id="jN5-RA-Fbd">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09i-0W-bZO">
-                                <rect key="frame" x="18" y="20" width="171" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="LWD-Un-NU8"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Rondinelli Morais" id="Q1h-Ki-njY">
-                                    <font key="font" metaFont="cellTitle"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="2It-as-pdx" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="28L-NL-WuI"/>
-                            <constraint firstItem="09i-0W-bZO" firstAttribute="leading" secondItem="2It-as-pdx" secondAttribute="leading" id="6zc-NF-2MR"/>
-                            <constraint firstItem="stl-i7-kuY" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="22" id="IPq-m2-BCG"/>
-                            <constraint firstAttribute="trailing" secondItem="2It-as-pdx" secondAttribute="trailing" constant="20" symbolic="YES" id="PFn-JY-HGC"/>
-                            <constraint firstAttribute="bottom" secondItem="09i-0W-bZO" secondAttribute="bottom" constant="20" symbolic="YES" id="QpL-1m-Fdt"/>
-                            <constraint firstItem="2It-as-pdx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="UHb-hJ-bIc"/>
-                            <constraint firstItem="stl-i7-kuY" firstAttribute="trailing" secondItem="2It-as-pdx" secondAttribute="trailing" id="s8y-u6-9O3"/>
-                            <constraint firstItem="stl-i7-kuY" firstAttribute="top" secondItem="2It-as-pdx" secondAttribute="bottom" constant="8" symbolic="YES" id="uH6-rk-LcY"/>
-                            <constraint firstItem="09i-0W-bZO" firstAttribute="trailing" secondItem="stl-i7-kuY" secondAttribute="trailing" id="zj4-J7-yJR"/>
+                            <constraint firstItem="2It-as-pdx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="17x-Rz-2Ju"/>
+                            <constraint firstItem="09i-0W-bZO" firstAttribute="top" secondItem="stl-i7-kuY" secondAttribute="bottom" constant="102" id="5ZE-jj-xSc"/>
+                            <constraint firstAttribute="trailing" secondItem="2It-as-pdx" secondAttribute="trailing" constant="20" id="8UD-0E-0iu"/>
+                            <constraint firstItem="2It-as-pdx" firstAttribute="top" secondItem="DVu-0q-f4R" secondAttribute="bottom" constant="8" id="I3Z-Cx-cKo"/>
+                            <constraint firstAttribute="trailing" secondItem="stl-i7-kuY" secondAttribute="trailing" constant="20" id="LWH-Je-BdI"/>
+                            <constraint firstItem="stl-i7-kuY" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="MYg-gg-Wxz"/>
+                            <constraint firstItem="09i-0W-bZO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="Sl7-AX-t26"/>
+                            <constraint firstItem="stl-i7-kuY" firstAttribute="top" secondItem="2It-as-pdx" secondAttribute="bottom" constant="8" id="T5o-BM-aCr"/>
+                            <constraint firstItem="DVu-0q-f4R" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="VgF-hS-NxP"/>
+                            <constraint firstItem="DVu-0q-f4R" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="94" id="Y7C-uv-8pD"/>
+                            <constraint firstItem="stl-i7-kuY" firstAttribute="top" secondItem="2It-as-pdx" secondAttribute="bottom" constant="8" id="ZKD-5d-QA9"/>
+                            <constraint firstAttribute="trailing" secondItem="DVu-0q-f4R" secondAttribute="trailing" constant="93" id="ZXk-Mg-d14"/>
+                            <constraint firstAttribute="trailing" secondItem="09i-0W-bZO" secondAttribute="trailing" constant="10" id="myo-WX-2iV"/>
+                            <constraint firstAttribute="bottom" secondItem="09i-0W-bZO" secondAttribute="bottom" constant="20" id="qLu-Tv-wOd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -137,7 +161,10 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75.5" y="708"/>
+            <point key="canvasLocation" x="227" y="226"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="high_trash_icon" width="51.200000762939453" height="51.200000762939453"/>
+    </resources>
 </document>
