@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum StatusTrash {
-    case Open
-    case Close
-    case None
+enum StatusTrash : String {
+    case Open = "1"
+    case Close = "0"
+    case None = "-1"
 }
 
 struct Directory {

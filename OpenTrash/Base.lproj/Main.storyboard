@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -110,15 +110,15 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09i-0W-bZO">
-                                <rect key="frame" x="8" y="20" width="223" height="16"/>
+                                <rect key="frame" x="8" y="10" width="223" height="13"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright (c) 2018 - Rondinelli Morais" id="Q1h-Ki-njY">
-                                    <font key="font" metaFont="cellTitle"/>
+                                    <font key="font" metaFont="system" size="10"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2It-as-pdx">
-                                <rect key="frame" x="18" y="165" width="203" height="25"/>
+                                <rect key="frame" x="8" y="165" width="223" height="25"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Mecha Tash Monitor" id="q3u-JH-NLn">
                                     <font key="font" size="20" name="HelveticaNeue-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -131,17 +131,30 @@
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="stl-i7-kuY">
                                 <rect key="frame" x="18" y="138" width="203" height="19"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Status trash" id="jN5-RA-Fbd">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="--" id="jN5-RA-Fbd">
                                     <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" doubleValue="1" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Jjl-f4-X0i">
+                                <rect key="frame" x="111" y="99" width="16" height="16"/>
+                            </progressIndicator>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8ss-ht-Dt0">
+                                <rect key="frame" x="51" y="75" width="138" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Aguardando conexão..." id="iJf-ry-xSn">
+                                    <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="2It-as-pdx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="17x-Rz-2Ju"/>
-                            <constraint firstItem="09i-0W-bZO" firstAttribute="top" secondItem="stl-i7-kuY" secondAttribute="bottom" constant="102" id="5ZE-jj-xSc"/>
-                            <constraint firstAttribute="trailing" secondItem="2It-as-pdx" secondAttribute="trailing" constant="20" id="8UD-0E-0iu"/>
+                            <constraint firstItem="2It-as-pdx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="17x-Rz-2Ju"/>
+                            <constraint firstItem="8ss-ht-Dt0" firstAttribute="top" secondItem="Jjl-f4-X0i" secondAttribute="bottom" constant="8" id="1st-MI-ioU"/>
+                            <constraint firstAttribute="trailing" secondItem="2It-as-pdx" secondAttribute="trailing" constant="10" id="8UD-0E-0iu"/>
+                            <constraint firstItem="Jjl-f4-X0i" firstAttribute="top" secondItem="stl-i7-kuY" secondAttribute="bottom" constant="23" id="8iI-aP-N1d"/>
+                            <constraint firstAttribute="bottom" secondItem="09i-0W-bZO" secondAttribute="bottom" constant="10" id="9QX-bR-hps"/>
                             <constraint firstItem="2It-as-pdx" firstAttribute="top" secondItem="DVu-0q-f4R" secondAttribute="bottom" constant="8" id="I3Z-Cx-cKo"/>
                             <constraint firstAttribute="trailing" secondItem="stl-i7-kuY" secondAttribute="trailing" constant="20" id="LWH-Je-BdI"/>
                             <constraint firstItem="stl-i7-kuY" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="MYg-gg-Wxz"/>
@@ -152,16 +165,19 @@
                             <constraint firstItem="stl-i7-kuY" firstAttribute="top" secondItem="2It-as-pdx" secondAttribute="bottom" constant="8" id="ZKD-5d-QA9"/>
                             <constraint firstAttribute="trailing" secondItem="DVu-0q-f4R" secondAttribute="trailing" constant="93" id="ZXk-Mg-d14"/>
                             <constraint firstAttribute="trailing" secondItem="09i-0W-bZO" secondAttribute="trailing" constant="10" id="myo-WX-2iV"/>
-                            <constraint firstAttribute="bottom" secondItem="09i-0W-bZO" secondAttribute="bottom" constant="20" id="qLu-Tv-wOd"/>
+                            <constraint firstItem="8ss-ht-Dt0" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="xyr-FY-Hbc"/>
+                            <constraint firstItem="Jjl-f4-X0i" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="y82-Y2-QnC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="statusTrashTextLabel" destination="stl-i7-kuY" id="CVy-lY-hcH"/>
+                        <outlet property="waitingForConnectionProgressIndicator" destination="Jjl-f4-X0i" id="c38-ER-HGJ"/>
+                        <outlet property="waitingForConnectionTextField" destination="8ss-ht-Dt0" id="sw0-wI-93Y"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="227" y="226"/>
+            <point key="canvasLocation" x="226.5" y="226"/>
         </scene>
     </scenes>
     <resources>

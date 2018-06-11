@@ -7,12 +7,16 @@
 //
 
 import Cocoa
+import IOBluetooth
 
 @NSApplicationMain
 class AppDelegate: NSObject {
     
     var activeWindow:NSWindowController?
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+    var rfcommChannel: IOBluetoothRFCOMMChannel?
+    var mBluetoothDevice:IOBluetoothDevice?
+    var mRFCOMMChannel:IOBluetoothRFCOMMChannel?
     
     func constructMenu() {
         let menu = NSMenu()
@@ -22,7 +26,13 @@ class AppDelegate: NSObject {
         statusItem.menu = menu
     }
     
-    @objc func openMainWindow(_ sender: Any) {
+    func startMonitor(){
+        
+        // start status trash monitor
+        Trash.shared.delegate = self
+    }
+    
+    @objc func openMainWindow(_ sender: Any?) {
         
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
 
@@ -42,6 +52,26 @@ class AppDelegate: NSObject {
         
         self.activeWindow = viewController
     }
+
+    @objc func closeDeviceConnectionOnDevice(_ device:IOBluetoothDevice) {
+        
+        if ( self.mBluetoothDevice == device )
+        {
+            if let error:IOReturn  = mBluetoothDevice?.closeConnection(), error != kIOReturnSuccess {
+                // I failed to close the connection, maybe the device is busy, no problem, as soon as the device is no more busy it will close the connetion itself.
+                print("Error - failed to close the device connection with error \(error).\n")
+            }
+            
+            self.mBluetoothDevice = nil
+        }
+    }
+
+    @objc func closeRFCOMMConnectionOnChannel(_ channel:IOBluetoothRFCOMMChannel){
+     
+        if self.mRFCOMMChannel == channel {
+            self.mRFCOMMChannel?.close()
+        }
+    }
 }
 
 extension AppDelegate : NSApplicationDelegate {
@@ -53,13 +83,13 @@ extension AppDelegate : NSApplicationDelegate {
         }
         
         constructMenu()
-        
-        // start status trash monitor
-        Trash.shared.delegate = self
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        
+        self.closeDeviceConnectionOnDevice(self.mBluetoothDevice!)
+        
+        self.closeRFCOMMConnectionOnChannel(self.mRFCOMMChannel!)
     }
 }
 
@@ -79,7 +109,12 @@ extension AppDelegate : TrashDelegate {
     
     func statusTrashDidChanged(_ status: StatusTrash) {
         
-        // TODO: avisar o arduino via bluetooth
+        let writebuffer = NSMutableData()
+        writebuffer.setData(status.rawValue.data(using: String.Encoding.ascii)!)
+        
+        if let rfcommChannel = self.rfcommChannel {
+            rfcommChannel.writeSync(writebuffer.mutableBytes, length: UInt16(writebuffer.length))
+        }
     }
 }
 
