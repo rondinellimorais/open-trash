@@ -22,6 +22,25 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         initialize()
+        
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.statusTrashDidChange = { (status) -> Void in
+            
+            // quando o status da lixeira mudar
+            switch status
+            {
+                case .Open:
+                    self.statusTrashTextLabel.stringValue = "Lixeira aberta!"
+                    self.statusTrashTextLabel.textColor = NSColor(calibratedRed: 78/255, green: 200/255, blue: 79/255, alpha: 1)
+                
+                case .Close:
+                    self.statusTrashTextLabel.stringValue = "Lixeira fechada!"
+                    self.statusTrashTextLabel.textColor = NSColor.red
+                    self.statusTrashTextLabel.textColor = NSColor(calibratedRed: 219/255, green: 58/255, blue: 49/255, alpha: 1)
+                
+                default:break
+            }
+        }
     }
     
     func initialize(){
@@ -35,23 +54,6 @@ class ViewController: NSViewController {
         self.waitingForConnectionTimer = Timer.scheduledTimer(timeInterval: 1.0, target:self, selector: #selector(checkTrashConnection), userInfo: nil, repeats: true)
     }
     
-    func changeLabelValues(){
-        
-        switch Trash.shared.status
-        {
-            case .Open:
-                self.statusTrashTextLabel.stringValue = "Lixeira aberta!"
-                self.statusTrashTextLabel.textColor = NSColor(calibratedRed: 78/255, green: 200/255, blue: 79/255, alpha: 1)
-            
-            case .Close:
-                self.statusTrashTextLabel.stringValue = "Lixeira fechada!"
-                self.statusTrashTextLabel.textColor = NSColor.red
-                self.statusTrashTextLabel.textColor = NSColor(calibratedRed: 219/255, green: 58/255, blue: 49/255, alpha: 1)
-            
-            default:break
-        }
-    }
-
     func connect(_ deviceAddress: String) -> Bool{
         
         for i in IOBluetoothDevice.pairedDevices() {
@@ -67,6 +69,15 @@ class ViewController: NSViewController {
     func connect(_ device: IOBluetoothDevice) -> Bool{
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        
+        if device.isConnected() {
+            
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
+            
+            appDelegate.startMonitor()
+            
+            return true
+        }
         
         if( device.openConnection() == kIOReturnSuccess) {
             
@@ -177,11 +188,6 @@ extension ViewController : IOBluetoothRFCOMMChannelDelegate {
 //
 //        rfcommChannel.writeSync(writebuffer.mutableBytes, length: UInt16(writebuffer.length))
         
-        // start check directory
-        Trash.shared.delegate = self
-        
-        self.changeLabelValues()
-        
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         
         appDelegate.rfcommChannel = rfcommChannel
@@ -215,12 +221,5 @@ extension ViewController : IOBluetoothRFCOMMChannelDelegate {
     
     func rfcommChannelQueueSpaceAvailable(_ rfcommChannel: IOBluetoothRFCOMMChannel!) {
         print("rfcommChannelQueueSpaceAvailable")
-    }
-}
-
-extension ViewController : TrashDelegate {
-    
-    func statusTrashDidChanged(_ status: StatusTrash) {
-        self.changeLabelValues()
     }
 }

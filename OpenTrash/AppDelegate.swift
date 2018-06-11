@@ -17,6 +17,7 @@ class AppDelegate: NSObject {
     var rfcommChannel: IOBluetoothRFCOMMChannel?
     var mBluetoothDevice:IOBluetoothDevice?
     var mRFCOMMChannel:IOBluetoothRFCOMMChannel?
+    var statusTrashDidChange:((_ status: StatusTrash) -> Void)?
     
     func constructMenu() {
         let menu = NSMenu()
@@ -114,6 +115,11 @@ extension AppDelegate : TrashDelegate {
         
         if let rfcommChannel = self.rfcommChannel {
             rfcommChannel.writeSync(writebuffer.mutableBytes, length: UInt16(writebuffer.length))
+        }
+        
+        // notify block
+        if let block = self.statusTrashDidChange {
+            block(status)
         }
     }
 }

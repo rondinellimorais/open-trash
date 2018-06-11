@@ -27,13 +27,19 @@ class Trash : NSObject {
     static let shared = Trash()
     public var delegate:TrashDelegate?
     var status:StatusTrash = StatusTrash.None
+    var timer:Timer?
     
     override init() {
         super.init()
         
         self.checkStatus(nil)
         
-        Timer.scheduledTimer(timeInterval: 0.5, target:self, selector: #selector(checkStatus(_:)), userInfo: nil, repeats: true)
+        if self.timer != nil {
+            self.timer?.invalidate()
+            self.timer = nil
+        }
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 0.5, target:self, selector: #selector(checkStatus(_:)), userInfo: nil, repeats: true)
     }
     
     func statusBaseDirectory() -> StatusTrash {
