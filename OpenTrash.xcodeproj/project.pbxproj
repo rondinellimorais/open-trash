@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183636B624311AD00041AD5D /* StatusContentTrash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183636B524311AD00041AD5D /* StatusContentTrash.swift */; };
+		183636B824311AE00041AD5D /* StatusTrash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183636B724311AE00041AD5D /* StatusTrash.swift */; };
 		18535F751AFEA51D009EC7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18535F741AFEA51D009EC7B9 /* AppDelegate.swift */; };
 		18535F771AFEA51D009EC7B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18535F761AFEA51D009EC7B9 /* ViewController.swift */; };
 		18535F791AFEA51D009EC7B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18535F781AFEA51D009EC7B9 /* Images.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183636B524311AD00041AD5D /* StatusContentTrash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusContentTrash.swift; sourceTree = "<group>"; };
+		183636B724311AE00041AD5D /* StatusTrash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTrash.swift; sourceTree = "<group>"; };
 		18535F6F1AFEA51D009EC7B9 /* OpenTrash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenTrash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18535F731AFEA51D009EC7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18535F741AFEA51D009EC7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183636B424311AB60041AD5D /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				183636B524311AD00041AD5D /* StatusContentTrash.swift */,
+				183636B724311AE00041AD5D /* StatusTrash.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		18535F661AFEA51D009EC7B9 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +98,7 @@
 		18535F911AFEA670009EC7B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				183636B424311AB60041AD5D /* Enum */,
 				18535F931AFEA766009EC7B9 /* Trash.swift */,
 			);
 			path = Model;
@@ -139,6 +153,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -169,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183636B624311AD00041AD5D /* StatusContentTrash.swift in Sources */,
 				18535F951AFEA766009EC7B9 /* Trash.swift in Sources */,
 				18535F771AFEA51D009EC7B9 /* ViewController.swift in Sources */,
 				18535F751AFEA51D009EC7B9 /* AppDelegate.swift in Sources */,
+				183636B824311AE00041AD5D /* StatusTrash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

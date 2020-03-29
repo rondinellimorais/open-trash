@@ -33,6 +33,16 @@ class AppDelegate: NSObject {
 		Trash.shared.delegate = self
 	}
 	
+	func sendBluetoothData(_ signal: String) {
+
+		let writebuffer = NSMutableData()
+		writebuffer.setData(signal.data(using: String.Encoding.ascii)!)
+		
+		if let rfcommChannel = self.rfcommChannel {
+			rfcommChannel.writeSync(writebuffer.mutableBytes, length: UInt16(writebuffer.length))
+		}
+	}
+	
 	@objc func openMainWindow(_ sender: Any?) {
 		
 		let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
@@ -110,17 +120,16 @@ extension AppDelegate : TrashDelegate {
 	
 	func statusTrashDidChanged(_ status: StatusTrash) {
 		
-		let writebuffer = NSMutableData()
-		writebuffer.setData(status.rawValue.data(using: String.Encoding.ascii)!)
-		
-		if let rfcommChannel = self.rfcommChannel {
-			rfcommChannel.writeSync(writebuffer.mutableBytes, length: UInt16(writebuffer.length))
-		}
+		sendBluetoothData(status.rawValue)
 		
 		// notify block
 		if let block = self.statusTrashDidChange {
 			block(status)
 		}
+	}
+	
+	func trashDidClean() {
+		sendBluetoothData(StatusContentTrash.Emptied.rawValue)
 	}
 }
 
