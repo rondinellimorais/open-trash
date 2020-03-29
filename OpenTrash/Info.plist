@@ -30,6 +30,8 @@
 	<string>Main</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Executar eventos para obter a lista de diretórios abertos</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>
